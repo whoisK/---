@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_hw_華氏攝氏溫度</title>
+</head>
+
+<body>
+    <h3>溫度轉換器</h3>
+    <!-- 攝 換 華 -->
+    <label for="">攝氏:</label><input type="text" id="InputC"><label for="">℉</label>
+    <input type="submit" id="SubmitC" value="換算"> <span id="OutputF"></span>
+    <br>
+    <br>
+    <!-- 華 換 攝 -->
+    <label for="">華氏:</label><input type="text" id="InputF"><label for="">℃</label>
+    <input type="submit" id="SubmitF" value="換算"> <span id="OutputC"></span>
+
+    <script>
+        let C = document.getElementById("InputC");
+        let SubC = document.getElementById("SubmitC");
+        let OutF = document.getElementById("OutputF");
+
+        let F = document.getElementById("InputF");
+        let SubF = document.getElementById("SubmitF");
+        let OutC = document.getElementById("OutputC");
+
+        // 華氏溫度f = (攝氏溫度 + 40)×1.8 - 40
+        // 攝氏溫度c = (華氏溫度 + 40)÷1.8 - 40
+
+        // <!-- 攝 換 華 -->
+        SubC.addEventListener("click", () => {
+            let result = (Number(C.value) + 40) * 1.8 - 40;
+            OutF.innerHTML = result + '℉'
+        });
+
+        // <!-- 華 換 攝 -->
+        SubF.addEventListener("click", () => {
+            let result = (Number(F.value) + 40) / 1.8 - 40;
+            OutC.innerHTML = result + '℃'
+        });
+
+    </script>
+</body>
+
+</html>

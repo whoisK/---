@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10_hw_輸入生日</title>
+</head>
+<h3>輸入生日計算年齡</h3>
+<input type="text" placeholder="年" id="Year" size="5px">
+<input type="text" placeholder="月" id="Month" size="5px">
+<input type="text" placeholder="日" id="Day" size="5px">
+<input type="button" value="計算" id="Button">
+<p id="YearsOld"></p>
+
+<body>
+    <script>
+        //輸入生日計算幾歲了
+
+        //過完當年生日：當年西元年數－出生西元年＝所得歲數為實歲
+        //未過完當年生日：當年西元年數－出生西元年－1＝所得歲數即為實歲
+
+        let Y = document.getElementById('Year');
+        let M = document.getElementById('Month');
+        let D = document.getElementById('Day');
+        let YearsOld = document.getElementById('YearsOld');
+
+        let Result = ""
+        let Button = document.getElementById('Button').addEventListener('click', () => {
+            let VaY = Number(Y.value);
+            let VaM = Number(M.value);
+            let VaD = Number(D.value);
+            let GetY = new Date().getFullYear();
+            let GetM = new Date().getMonth() + 1;
+            let GetD = new Date().getDate();
+            //先減年
+            let Result = GetY - VaY;
+            //在比月&日
+            if (VaM > GetM) {
+                YearsOld.innerHTML = String(Result - 1);
+            } else if (VaM == GetM && VaD > GetD) {
+                YearsOld.innerHTML = String(Result - 1);
+            } else {
+                YearsOld.innerHTML = String(Result)
+            }
+
+        })
+
+
+    </script>
+</body>
+
+</html>

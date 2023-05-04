@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_hw_樹</title>
+
+</head>
+
+<body>
+    <div class="sty1">
+        <div id="Tree"></div>
+    </div>
+
+    <script>
+        let Tree = document.getElementById('Tree');
+        let layers = 8;
+        let T = '^';
+        let SI = '&nbsp;';
+        let content = '';
+
+        for (let i = 1; i <= layers; i++) {
+            let row = '';
+            row = T.repeat(i * 2 - 1);
+
+
+
+            let SO = '';
+            SO = SI.repeat(layers - i);
+            console.log(SO);
+            content += SO + row + '<br>';
+            // console.log(content);
+            Tree.innerHTML = content;
+        }
+
+        let trunk = SI.repeat(layers + 1) + T + '<br>' + SI.repeat(layers + 1) + T;
+        Tree.innerHTML += trunk;
+
+
+        // for (let i = 1; i <= 7; i++) {
+        //     T = i + "&nbsp;" + "*";
+        //     console.log(i);
+        // }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09_hw_郵件檢查＠</title>
+</head>
+
+<body>
+    <label>Email:</label><input type="text" id="idEmail" />
+    <br />
+    <input type="button" value="checkEmail" onclick="chkEmail();" />
+    <script>
+        function chkEmail() {
+            let theEmail = document.getElementById("idEmail").value;
+            // let re = /^[^\s@]+@[^\s@]+\.[^\s@]+.{2,3}$/; //.[^\s@]占一個字元
+            let re = /^[^\s@]+@[^\s@]+\.+[^@\s]{2,3}$/;
+
+            if (re.test(theEmail)) //以字串theEmail,比對物件re
+                window.alert("successful");
+            else
+                window.alert("failure");
+        }
+    </script>
+    </script>
+</body>
+
+</html>

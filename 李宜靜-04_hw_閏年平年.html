@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_hw_閏年平年</title>
+</head>
+
+<body>
+    <h3>輸入西元年，判斷是否是閏年</h3>
+    <input type="text" id="Year" placeholder="年份" size="10px">
+    <input type="submit" id="Submit" value="送出">
+    <div id="Output"></div>
+    <script>
+        let Y = document.getElementById('Year');
+        let submit = document.getElementById('Submit');
+        let Output = document.getElementById('Output');
+
+        submit.addEventListener('click', () => {
+            let result = Number(Y.value);
+            if (result % 400 === 0) {
+                Output.innerHTML = "閏年";
+            } else if (result % 4 === 0 && result % 100 !== 0) {
+                Output.innerHTML = "閏年";
+            } else if (result % 4 !== 0) {
+                Output.innerHTML = "平年";
+            } else if (result % 100 == 0 && result % 400 !== 0) {
+                Output.innerHTML = "平年";
+            }
+            console.log(Y);
+        });
+    </script>
+</body>
+
+</html>

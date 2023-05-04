@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_hw_猜數字遊戲</title>
+</head>
+
+<body>
+    <script>
+        let gamestart = true;
+        let targetNum = Math.floor(Math.random() * 100);
+        //跳出輸入表格
+        let getNum = parseInt(prompt('請輸入猜測的數字(1~100)'));
+        console.log(targetNum);
+        while (gamestart === true) {
+            if (getNum === targetNum || getNum === 0) {
+                gamestart = false;
+                window.alert('遊戲結束！');
+            } else if (getNum < 1 || getNum > 100) {
+                getNum = parseInt(prompt('猜測的範圍為1~100之間'));
+            } else if (getNum > targetNum) {
+                getNum = parseInt(prompt('數字太大了'));
+            } else if (getNum < targetNum) {
+                getNum = parseInt(prompt('數字太小囉'));
+            }
+        }
+
+//條件：
+//猜中
+//超出猜測範圍 也就是1-100之外
+//猜太大
+//猜太小
+    </script>
+
+</body>
+
+</html>
